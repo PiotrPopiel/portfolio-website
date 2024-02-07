@@ -9,15 +9,14 @@ import { useSectionInView } from "@/hooks/useSectionInView";
 function Contact() {
   const { ref } = useSectionInView("Contact", 0.8);
 
-  const sendEmailHandler = async (formData: FormData) => {
-    const { error } = await sendEmail(formData);
+  const emailHandler = async (formData) => {
+    const { data, error } = await sendEmail(formData);
 
     if (error) {
       toast.error(error.message);
       return;
-    } else {
-      toast.success("Successfuly sent email!");
     }
+    toast.success("Email sent successfully!");
   };
 
   return (
@@ -38,7 +37,7 @@ function Contact() {
         or through this form.
       </p>
       <form
-        action={sendEmailHandler}
+        action={emailHandler}
         className="flex flex-col w-[min(80%,34rem)] mb-5">
         <input
           type="email"

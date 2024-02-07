@@ -6,7 +6,7 @@ import EmailFormTemplate from "@/components/EmailFormTemplate";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export const sendEmail = async (formData: FormData) => {
+export async function sendEmail(formData: FormData) {
   const sender = formData.get("sender");
   const message = formData.get("message");
 
@@ -22,20 +22,17 @@ export const sendEmail = async (formData: FormData) => {
     };
   }
 
-  let data: unknown;
-  try {
-    data = await resend.emails.send({
-      from: "Portfolio Contact Form <onboarding@resend.dev>",
-      to: "popielpiotr90@gmail.com",
-      subject: "Message from Portfolio contact form",
-      react: EmailFormTemplate({
-        message: message as string,
-        sender: sender as string,
-      }),
-    });
-  } catch (error: unknown) {
-    return data?.error?.message;
+  const { data, error } = await resend.emails.send({
+    from: "Portfolio Contact Form <onboarding@resend.dev>",
+    to: ["popielpiotr90@gmail.com"],
+    subject: "Message from Portfolio contact form",
+    react: EmailFormTemplate({
+      message: message as string,
+      sender: sender as string,
+    }),
+  });
+  if (error) {
+    return { error };
   }
-
-  return data;
-};
+  return { data };
+}
