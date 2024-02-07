@@ -57,9 +57,9 @@ function About() {
       </div>
 
       <p className="text-lg">
-        I&lsquo;m ready to take on new projects, grow professionally, and
-        collaborate with passionate individuals. If you have any questions or
-        proposals, feel free to reach out to me!
+        I'm ready to take on new projects, grow professionally, and collaborate
+        with passionate individuals. If you have any questions or proposals,
+        feel free to reach out to me!
       </p>
     </motion.section>
   );

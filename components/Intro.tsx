@@ -31,10 +31,9 @@ export default function Intro() {
           </h1>
           <br />
           <p className="text-xl md:text-2xl font-semibold py-2 mx-10 ">
-            Hello I&lsquo;m <span className="font-bold">Piotr Popiel </span>.
-            I&lsquo;m a self-taught{" "}
-            <span className="font-bold">Fronted Developer</span>. I am ready to
-            collaborate on exciting projects. My main focus is{" "}
+            Hello I'm <span className="font-bold">Piotr Popiel </span>. I'm a
+            self-taught <span className="font-bold">Fronted Developer</span>. I
+            am ready to collaborate on exciting projects. My main focus is{" "}
             <span className="font-bold">React </span>
             (Next.js).
           </p>
