@@ -9,7 +9,7 @@ import { useSectionInView } from "@/hooks/useSectionInView";
 function Contact() {
   const { ref } = useSectionInView("Contact", 0.8);
 
-  const emailHandler = async (formData) => {
+  const emailHandler = async (formData: FormData) => {
     const { data, error } = await sendEmail(formData);
 
     if (error) {
