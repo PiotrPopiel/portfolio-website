@@ -1,6 +1,6 @@
 "use server";
 
-import { validateString } from "@/lib/utils";
+import { getErrorMessage, validateString } from "@/lib/utils";
 import { Resend } from "resend";
 import EmailFormTemplate from "@/components/EmailFormTemplate";
 
@@ -23,7 +23,7 @@ export async function sendEmail(formData: FormData) {
   }
 
   const { data, error } = await resend.emails.send({
-    from: "Portfolio Contact Form <onboarding@resend.dev>",
+    from: "Portfolio Contact Form <onboarding@resend.com>",
     to: ["popielpiotr90@gmail.com"],
     subject: "Message from Portfolio contact form",
     react: EmailFormTemplate({
@@ -32,7 +32,9 @@ export async function sendEmail(formData: FormData) {
     }),
   });
   if (error) {
-    return { error };
+    return {
+      error: getErrorMessage(error),
+    };
   }
   return { data };
 }

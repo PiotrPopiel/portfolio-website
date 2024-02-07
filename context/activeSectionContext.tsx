@@ -5,12 +5,14 @@ import { createContext, useState } from "react";
 
 type SectionName = (typeof navLinks)[number]["name"] | "Home";
 
-type ActiveSectionContextType = {
-  activeSection: SectionName;
-  setActiveSection: React.Dispatch<React.SetStateAction<SectionName>>;
-  timeOfLastClick: number;
-  setTimeOfLastClick: React.Dispatch<React.SetStateAction<number>>;
-};
+type ActiveSectionContextType =
+  | ""
+  | {
+      activeSection: SectionName;
+      setActiveSection: React.Dispatch<React.SetStateAction<SectionName>>;
+      timeOfLastClick: number;
+      setTimeOfLastClick: React.Dispatch<React.SetStateAction<number>>;
+    };
 
 //Context for active section and timer of last time that user clicked on navLink
 
@@ -21,7 +23,7 @@ export default function activeSectionContextProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [activeSection, setActiveSection] = useState<SectionName>("");
+  const [activeSection, setActiveSection] = useState<SectionName>("Home");
   const [timeOfLastClick, setTimeOfLastClick] = useState(0);
 
   return (

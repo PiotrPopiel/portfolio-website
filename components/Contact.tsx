@@ -10,10 +10,10 @@ function Contact() {
   const { ref } = useSectionInView("Contact", 0.8);
 
   const emailHandler = async (formData: FormData) => {
-    const { data, error } = await sendEmail(formData);
+    const { error } = await sendEmail(formData);
 
     if (error) {
-      toast.error(error.message);
+      toast.error(error);
       return;
     }
     toast.success("Email sent successfully!");

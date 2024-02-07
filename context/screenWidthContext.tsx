@@ -2,10 +2,12 @@
 
 import { createContext, useEffect, useState } from "react";
 
-type screenWidthContextType = {
-  width: number;
-  setWidth?: React.Dispatch<React.SetStateAction<number>>;
-};
+type screenWidthContextType =
+  | number
+  | {
+      width: number;
+      setWidth?: React.Dispatch<React.SetStateAction<number>>;
+    };
 
 //Context to watch the screen width
 
