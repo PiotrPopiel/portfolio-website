@@ -1,11 +1,10 @@
 import { BiSolidHome } from "react-icons/bi";
 import Link from "next/link";
-import { ActiveSectionContext } from "@/context/activeSectionContext";
-import { useContext } from "react";
+import { useActiveSectionContext } from "@/context/activeSectionContext";
 
 export function HomeButton() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
-    useContext(ActiveSectionContext);
+    useActiveSectionContext();
 
   return (
     <Link

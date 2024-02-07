@@ -1,7 +1,7 @@
-import { ActiveSectionContext } from "@/context/activeSectionContext";
+import { useActiveSectionContext } from "@/context/activeSectionContext";
 import { navLinks } from "@/lib/data";
 import { useInView } from "framer-motion";
-import { useContext, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 type SectionName = (typeof navLinks)[number]["name"] | "Home";
 
@@ -10,8 +10,7 @@ type SectionName = (typeof navLinks)[number]["name"] | "Home";
 export function useSectionInView(section: SectionName, amount: number) {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount });
-  const { setActiveSection, timeOfLastClick } =
-    useContext(ActiveSectionContext);
+  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
 
   useEffect(() => {
     if (isInView && Date.now() - timeOfLastClick > 1000) {

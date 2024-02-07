@@ -1,17 +1,15 @@
 "use client";
 
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
-type screenWidthContextType =
-  | number
-  | {
-      width: number;
-      setWidth?: React.Dispatch<React.SetStateAction<number>>;
-    };
+type screenWidthContextType = {
+  width: number;
+  setWidth?: React.Dispatch<React.SetStateAction<number>>;
+};
 
 //Context to watch the screen width
 
-export const ScreenWidthContext = createContext<screenWidthContextType>(0);
+export const ScreenWidthContext = createContext<screenWidthContextType | 0>(0);
 
 export function ScreenWidthContextProvider({
   children,
@@ -31,4 +29,16 @@ export function ScreenWidthContextProvider({
       {children}
     </ScreenWidthContext.Provider>
   );
+}
+
+export function useScreenWidthContext() {
+  const context = useContext(ScreenWidthContext);
+
+  if (context === 0) {
+    throw new Error(
+      "useScreenWidthContext must be use wihing an ScreenWidthContextProvider"
+    );
+  }
+
+  return context;
 }

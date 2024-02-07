@@ -1,16 +1,16 @@
 "use client";
 
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import ThemeSwitch from "../ThemeSwitch";
 import { motion } from "framer-motion";
 import { HomeButton } from "./HomeButton";
 import { NavLinks } from "./NavLinks";
-import { ScreenWidthContext } from "@/context/screenWidthContext";
+import { useScreenWidthContext } from "@/context/screenWidthContext";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const { width } = useContext(ScreenWidthContext);
+  const { width } = useScreenWidthContext();
 
   if (width >= 640 && isOpen) {
     setIsOpen(false);

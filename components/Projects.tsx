@@ -4,11 +4,10 @@ import ProjectCard from "./ProjectCard";
 import { projects } from "@/lib/data";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/hooks/useSectionInView";
-import { useContext } from "react";
-import { ScreenWidthContext } from "@/context/screenWidthContext";
+import { useScreenWidthContext } from "@/context/screenWidthContext";
 
 function Projects() {
-  const { width } = useContext(ScreenWidthContext);
+  const { width } = useScreenWidthContext();
 
   let amount: number = 0.7;
 

@@ -1,9 +1,8 @@
 import { navLinks } from "@/lib/data";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useContext } from "react";
-import { ActiveSectionContext } from "@/context/activeSectionContext";
-import { ScreenWidthContext } from "@/context/screenWidthContext";
+import { useActiveSectionContext } from "@/context/activeSectionContext";
+import { useScreenWidthContext } from "@/context/screenWidthContext";
 
 type isOpenType = {
   isOpen: boolean;
@@ -12,9 +11,9 @@ type isOpenType = {
 
 export function NavLinks({ isOpen, setIsOpen }: isOpenType) {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
-    useContext(ActiveSectionContext);
+    useActiveSectionContext();
 
-  const { width } = useContext(ScreenWidthContext);
+  const { width } = useScreenWidthContext();
 
   const isMenuOpen = () => {
     if (width <= 639 && isOpen) {
