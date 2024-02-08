@@ -21,10 +21,10 @@ function Projects() {
     <motion.section
       id="projects"
       ref={ref}
-      className="flex flex-col items-center w-full mt-28 mb-28 scroll-mt-28"
+      className="flex flex-col items-center w-full mt-28 mb-28 max-sm:mt-16 scroll-mt-28"
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, type: "spring", delay: 0.8 }}
+      transition={{ duration: 1, type: "spring", delay: 0.5 }}
       viewport={{ once: true }}>
       <div className="container text-center mb-5">
         <h2 className="text-3xl font-bold p-5">My Projects</h2>

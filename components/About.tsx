@@ -2,18 +2,26 @@
 
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/hooks/useSectionInView";
+import { useScreenWidthContext } from "@/context/screenWidthContext";
 
 function About() {
-  const { ref } = useSectionInView("About", 0.7);
+  const { width } = useScreenWidthContext();
+
+  let amount: number = 0.7;
+
+  if (width < 773) {
+    amount = 0.3;
+  }
+  const { ref } = useSectionInView("About", amount);
 
   return (
     <motion.section
       id="about"
       ref={ref}
-      className="container md:p-20 flex flex-col gap-8 items-center text-center mt-28 mb-28 scroll-mt-36 p-5"
+      className="container md:p-20 flex flex-col gap-8 items-center text-center mt-28 mb-28 max-sm:mt-16 scroll-mt-36 p-5"
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, type: "spring", delay: 0.8 }}
+      transition={{ duration: 0.8, type: "spring", delay: 0.5 }}
       viewport={{ once: true }}>
       <h3 className="text-3xl font-bold pt-5 mb-5">About Me</h3>
       <p className="leading-7 text-lg">

@@ -23,15 +23,15 @@ function Contact() {
     <motion.section
       id="contact"
       ref={ref}
-      className="container flex flex-col p-5 md:p-10 items-center gap-10 mt-28 mb-20"
+      className="container flex flex-col p-5 md:p-10 items-center gap-10 mt-28 mb-20 max-sm:mt-16 max-sm:mb-8 scroll-mt-28"
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, type: "spring", delay: 0.8 }}
+      transition={{ duration: 0.8, type: "spring", delay: 0.5 }}
       viewport={{ once: true }}>
       <h2 className="text-3xl font-bold pt-5">Contact Me</h2>
       <p className="-mt-5">
         Please contact me directly at{" "}
-        <a href="mailto:example@gmail.com" className="underline">
+        <a href="mailto:popielpiotr90@gmail.com" className="underline">
           example@gmail.com
         </a>{" "}
         or through this form.
