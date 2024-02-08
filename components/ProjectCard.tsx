@@ -28,6 +28,7 @@ function ProjectCard({
 
         <Link
           href={gitHubLink}
+          target="_blank"
           className="bg-gray-950 text-gray-50 flex gap-4 items-center p-2 w-[80%] rounded-full hover:bg-gray-800 transition hover:scale-[1.03] focus:scale-[1.03] active:scale-100 dark:bg-gray-100 dark:text-gray-950 font-bold">
           <FaGithub className="text-xl ml-3" /> <p>Git Hub Link</p>
         </Link>
