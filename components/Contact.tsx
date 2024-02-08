@@ -32,7 +32,7 @@ function Contact() {
       <p className="-mt-5">
         Please contact me directly at{" "}
         <a href="mailto:popielpiotr90@gmail.com" className="underline">
-          popielpiotr@gmail.com
+          popielpiotr90@gmail.com
         </a>{" "}
         or through this form.
       </p>
