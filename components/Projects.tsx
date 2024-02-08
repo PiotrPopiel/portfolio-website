@@ -27,7 +27,7 @@ function Projects() {
       transition={{ duration: 1, type: "spring", delay: 0.5 }}
       viewport={{ once: true }}>
       <div className="container text-center mb-5">
-        <h2 className="text-3xl font-bold p-5">My Projects</h2>
+        <h3 className="text-3xl font-bold p-5">My Projects</h3>
       </div>
 
       <ul className="flex flex-row justify-center flex-wrap gap-10 mx-[5%]">

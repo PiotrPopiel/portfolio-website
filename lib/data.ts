@@ -20,6 +20,7 @@ export const projects = [
     name: "My Portfolio",
     urlImg: portfolioImg,
     description: "My Porfolio. The site you are on right now.",
+    urlLink: "https://piotr-popiel.vercel.app",
     gitHubLink: "https://github.com/PiotrPopiel/portfolio-website",
     tags: ["react", "tailwind", "typescript", "next.js"],
     id: 1,

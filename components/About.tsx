@@ -23,7 +23,7 @@ function About() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, type: "spring", delay: 0.5 }}
       viewport={{ once: true }}>
-      <h3 className="text-3xl font-bold pt-5 mb-5">About Me</h3>
+      <h2 className="text-3xl font-bold pt-5 mb-5">About Me</h2>
       <p className="leading-7 text-lg">
         I am a technology enthusiast and creative individual specializing in
         front-end development. It is my pleasure to introduce myself as a junior

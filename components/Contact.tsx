@@ -28,7 +28,7 @@ function Contact() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, type: "spring", delay: 0.5 }}
       viewport={{ once: true }}>
-      <h2 className="text-3xl font-bold pt-5">Contact Me</h2>
+      <h3 className="text-3xl font-bold pt-5">Contact Me</h3>
       <p className="-mt-5">
         Please contact me directly at{" "}
         <a href="mailto:popielpiotr90@gmail.com" className="underline">
